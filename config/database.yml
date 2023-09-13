@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: helloworld_development
+  database: budget_development
   username: postgres
   password: R@fi0123
   host: localhost
@@ -32,7 +32,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: helloworld
+  #username: budget
 
   # The password associated with the postgres role (username).
   #password:
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: helloworld_test
+  database: budget_test
   username: postgres
   password: R@fi0123
   host: localhost
@@ -87,7 +87,7 @@ test:
 #
 production:
   <<: *default
-  database: helloworld_production
+  database: budget_production
   username: postgres
   password: R@fi0123
   host: localhost

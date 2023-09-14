@@ -1,0 +1,26 @@
+<div class="container">
+  <% if @categories.empty? %>
+    <p>Category lists is empty, please add a new category to begin.</p>
+  <% else %>
+    <% @categories.each do |category| %>
+      <%= link_to expense_index_path({ :category_id => category.id }), class: 'cat_id' do %>
+
+        <div class="card mb-4">
+          <div class="card-body d-flex mx-4" style="align-items:center;justify-content:space-between">
+            <img class="icon-img" src="<%= category.icon %>" alt="<%= category.name%> image">
+            <div>
+              <h5 class="card-title m-0"> <%= category.name.capitalize %> </h5>
+              <p class="card-text time"><%= category.created_at.strftime('%a %d %b, %Y')%> </p>
+            </div>
+            <h5 class="card-body m-6"> <%= number_to_currency(category.expenses.sum(:amount), unit:"₦") %> </h5>
+
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  <% end %>
+  <div class="category-div">
+    <%= link_to 'Add new Category', new_user_category_path(current_user), class: "btn new-category" %>
+  </div>

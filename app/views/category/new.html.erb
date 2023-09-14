@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <%= link_to "🔙 Back", user_category_index_path(current_user), class: "back-btn-new btn btn-sm" %><br/>
+  </div><br/>
+  <%= form_with model: Category, url: user_category_index_path(current_user.id), data: { turbo: false } do |f| %>
+    <div class="field form-group" >
+      <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Category name", id: "user_name", value: '' %><br/>
+    </div>
+
+    <div class="field form-group" >
+      <%= f.text_field :icon, class: "form-control", placeholder: "Category Icon", id: "user_icon" %><br/>
+    </div>
+
+    <div class="actions d-flex justify-content-center">
+      <%= f.submit "Add Category", class: 'btn add-cat' %>
+    </div>
+  <% end %>
+</div>

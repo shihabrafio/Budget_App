@@ -300,6 +300,7 @@ DEPENDENCIES
   rails (~> 7.0.7)
   rails-controller-testing
   rspec-rails (~> 6.0, >= 6.0.3)
+  rspec-support (= 3.12.1)
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails

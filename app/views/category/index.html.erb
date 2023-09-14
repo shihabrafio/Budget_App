@@ -12,7 +12,7 @@
               <h5 class="card-title m-0"> <%= category.name.capitalize %> </h5>
               <p class="card-text time"><%= category.created_at.strftime('%a %d %b, %Y')%> </p>
             </div>
-            <h5 class="card-body m-6"> <%= number_to_currency(category.expenses.sum(:amount), unit:"₦") %> </h5>
+            <h5 class="card-body m-6"> <%= number_to_currency(category.expenses.sum(:amount), unit:"৳") %> </h5>
 
           </div>
 

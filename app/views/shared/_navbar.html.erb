@@ -1,0 +1,46 @@
+<nav class="navbar navbar_2 navbar-expand-sm">
+  <div class="container-fluid d-flex mx-3" style="align-items:center">
+
+    <button class="navbar-toggler", type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"  id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="color:#fff">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.name, user_category_index_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Create category', new_user_category_path(current_user), class: "nav-link" %>
+          </li>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= button_to 'Log Out', destroy_user_session_path, :method => :delete, class: "btn btn-link nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <p>Log in</p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <% if !user_signed_in?%>
+        <p></p>
+      <% elsif request.fullpath == new_expense_path({category_id: params[:category_id]})%>
+        <P class="headings">Add new expense</P>
+      <% elsif request.fullpath == expense_index_path%>
+        <P class="headings">Expense page</P>
+      <% elsif request.fullpath == user_category_index_path(current_user) %>
+        <p class="headings">Categories</p>
+      <% elsif request.fullpath == new_user_category_path(current_user) %>
+        <p class="headings">Add a new Category</p>
+      <% elsif user_signed_in? || request.fullpath == user_category_path(current_user, @category.id) %>
+        <p class="headings">Details</p>
+      <% end %>
+    </div>
+  </div>
+</nav>

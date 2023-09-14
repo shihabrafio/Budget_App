@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Expenses', type: :feature do
   before(:each) do
-    @user = User.create(name: 'John', email: 'john@gmail.com', password: '123456', password_confirmation: '123456')
+    @user = User.create(name: 'Rafio', email: 'rafio@gmail.com', password: '123456', password_confirmation: '123456')
     @category = @user.categories.create(name: 'Food', icon: 'fas fa-home')
 
     visit new_user_session_path
-    fill_in 'Email', with: 'john@gmail.com'
+    fill_in 'Email', with: 'rafio@gmail.com'
     fill_in 'Password', with: '123456'
     click_button 'Log in'
   end

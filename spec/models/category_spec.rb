@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before(:each) do
-    @user = User.create(name: 'Bushra', email: 'bushra@gmail.com', password: 'Melvin1')
+    @user = User.create(name: 'Rafio', email: 'rafio@gmail.com', password: 'Melvin1')
     @category = Category.create(name: 'Rent', icon: 'fas fa-home', user_id: @user.id)
     @expense1 = Expense.create(name: 'Rent', amount: 16_000, user_id: @user.id)
     @expense2 = Expense.create(name: 'Makeup', amount: 8000, user_id: @user.id)

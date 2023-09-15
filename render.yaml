@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: ruby-capstone
+    databaseName: ruby_capstone
+    user: ruby_capstone_user
 
 services:
   - type: web
-    name: mysite
+    name: ruby-capstone
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: ruby_capstone
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

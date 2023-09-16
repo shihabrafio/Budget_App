@@ -1,7 +1,7 @@
  body {
   background-color: #f5f6f8;
-  width: 120%;
-  margin-left: 40px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .hidden {
@@ -50,6 +50,8 @@ a.btn-link {
   border: 1px solid #fff;
   padding: 8px;
   text-align: center;
+
+  /* margin-bottom: 4px; */
   width: 100%;
 }
 
@@ -171,4 +173,64 @@ a.back-btn-new {
 .btn-login-small:hover {
   background-color: #f5f6f8;
   color: #3778c2;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 99%;
+  }
+
+  .logo {
+    margin-top: 10vh;
+  }
+
+  .btn-login,
+  .btn-signup,
+  .btn-logs {
+    width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .navbar_2 {
+    padding: 10px 0;
+  }
+
+  .category-div {
+    height: auto;
+    padding: 10px;
+  }
+
+  .headings {
+    font-size: 18px;
+  }
+
+  .budget-app {
+    font-size: 18px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  form {
+    padding: 3%;
+  }
+
+  .edit {
+    padding-left: 3%;
+  }
+
+  h2 {
+    padding-left: 3%;
+  }
+
+  .btn-login-small,
+  .btn-hover,
+  .alert-style {
+    margin: 8px 0;
+    font-size: 12px;
+  }
 }

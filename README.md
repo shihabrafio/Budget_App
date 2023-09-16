@@ -56,7 +56,7 @@ To get a local copy of the program running, follow these simple steps
   - navigate to the root directory with a command line preferably ubuntu terminal
   - run 'bundle install'
   - run 'rails db:create db:migrate db:seed
-  - run 'rails serve'
+  - run 'rails server'
 
 ## Authors
 
